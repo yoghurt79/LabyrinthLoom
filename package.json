@@ -1,0 +1,57 @@
+{
+  "name": "procedural-3d-dungeon-explorer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A deterministic procedural 3D dungeon generator built with Vite, TypeScript and Three.js.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "desktop": "npm run build && electron .",
+    "desktop:dev": "electron .",
+    "dist": "npm run build && electron-builder --win portable"
+  },
+  "devDependencies": {
+    "@types/three": "^0.180.0",
+    "electron": "^44.3.0",
+    "electron-builder": "^26.15.3",
+    "three": "^0.186.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4"
+  },
+  "build": {
+    "appId": "com.labyrinthloom.dungeonexplorer",
+    "productName": "Labyrinth Loom",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "LabyrinthLoom-${version}-${arch}.${ext}",
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "LabyrinthLoom-${version}-portable.${ext}"
+    },
+    "npmRebuild": false
+  },
+  "main": "electron/main.cjs",
+  "author": "Labyrinth Loom",
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

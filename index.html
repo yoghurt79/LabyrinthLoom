@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071223" />
+    <meta name="description" content="程序化暗黑奇幻 3D 地牢探索器" />
+    <title>迷宫织机 · Procedural 3D Dungeon Explorer</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="dungeon-canvas" aria-label="程序化 3D 地牢场景"></canvas>
+      <div class="screen-vignette" aria-hidden="true"></div>
+      <div id="control-root" class="ui-layer"></div>
+      <div id="info-root" class="ui-layer"></div>
+      <footer class="control-hint">
+        <span><b>左键拖拽</b> 旋转</span>
+        <span><b>滚轮</b> 缩放</span>
+        <span><b>右键拖拽</b> 平移</span>
+        <span><b>点击对象</b> 检视</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
